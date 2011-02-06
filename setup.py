@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from setuptools import setup, find_packages
+from distutils.core import setup
 from html_blocks import VERSION
 path='xpaginate'
 
@@ -10,7 +10,7 @@ setup(name=path,
       author='NORD',
       author_email='nordmenss@gmail.com',
       url='https://github.com/nordmenss/django-xpaginate',
-      packages=find_packages(),
+      packages=[ path,path+'.templatetags',path+'.templates',],
       include_package_data=True,
 
       classifiers=(
