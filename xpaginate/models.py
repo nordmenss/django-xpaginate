@@ -18,7 +18,6 @@ class XPaginate:
     def __init__(self, page):
         self.total_items = int(page._total_items)
         self.current = int(page._current)
-        self.current=88
         self.per_page = int(page._per_page)
         self.show = int(page._show)
         self.jump = page._jump
@@ -119,4 +118,5 @@ class RenderXPage(Node):
 
     def render(self, context):
         self.page = self.page.resolve(context)
-        return render_to_string('xpaginate/xpaginate.html', { 'xpaginate': XPaginate(self.page) })
+        xpage=XPaginate(self.page)
+        return render_to_string('xpaginate/xpaginate.html', { 'xpaginate': xpage,"total_pages":xpage.total_pages,"per_page":xpage.per_page })
