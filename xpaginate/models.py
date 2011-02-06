@@ -42,7 +42,9 @@ class XPaginate:
         else:
             self.has_next = False
 
+        last_previous=0
         last_foward=self.total_pages
+
         # Get the first foward set of page links if avaliable
         self.foward_pages = []
         if self.has_next:
