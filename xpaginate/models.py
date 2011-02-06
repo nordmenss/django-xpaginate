@@ -18,6 +18,7 @@ class XPaginate:
     def __init__(self, page):
         self.total_items = int(page._total_items)
         self.current = int(page._current)
+        self.current=88
         self.per_page = int(page._per_page)
         self.show = int(page._show)
         self.jump = page._jump
