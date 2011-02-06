@@ -119,7 +119,7 @@ class RenderXPage(Node):
     def render(self, context):
         self.page = self.page.resolve(context)
         xpage=XPaginate(self.page)
-        if xpage.total_pages>=xpage.per_page:
+        if xpage.total_pages>1:
             return render_to_string('xpaginate/xpaginate.html', { 'xpaginate': xpage })
         else:
             return ''

@@ -1,4 +1,6 @@
-{% if xpaginate.total_pages >= xpaginate.per_page %}
+{{ xpaginate.total_pages }}
+{{ xpaginate.per_page }}
+{% if xpaginate.total_pages > 1 %}
 	test
 	<div id="pagination">
 	{% if xpaginate.has_previous %}
