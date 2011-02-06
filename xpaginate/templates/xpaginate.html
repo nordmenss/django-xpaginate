@@ -1,0 +1,27 @@
+{% if xpaginate.total_pages >= xpaginate.per_page %}
+	<div id="pagination">
+	{% if xpaginate.has_previous %}
+	<a href="{{ xpaginate.uri }}{{ xpaginate.previous }}"><< Previous</a>
+	    {% if xpaginate.has_jump_previous %}
+	        {% for a in xpaginate.previous_page_jump %}
+	            <a href="{{ xpaginate.uri }}{{ a }}">{{ a }}</a> ...
+	        {% endfor %}
+	    {% endif %}
+	    {% for a in xpaginate.previous_pages %}
+	        <a href="{{ xpaginate.uri }}{{ a }}">{{ a }}</a>
+	    {% endfor %}
+	{% endif %}
+
+	<span class="current">{{ xpaginate.current }}</span>
+
+	{% if xpaginate.has_next %}
+	    {% for a in xpaginate.foward_pages %}
+	        <a href="{{ xpaginate.uri }}{{ a }}">{{ a }}</a>
+	    {% endfor %}
+	    {% if xpaginate.show_last %}
+	        ... <a href="{{ xpaginate.uri }}{{ xpaginate.total_pages }}">{{ xpaginate.total_pages }}</a>
+	    {% endif %}
+	    <a href="{{ xpaginate.uri }}{{ xpaginate.foward }}">Next >></a>
+	{% endif %}
+	</div>
+{% endif %}
