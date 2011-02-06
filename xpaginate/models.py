@@ -1,6 +1,7 @@
 from math import *
 from django.template import Library, Node
 from django import template
+from django.template.loader import render_to_string
 import traceback
 
 class Xoptions():
@@ -115,6 +116,4 @@ class RenderXPage(Node):
 
     def render(self, context):
         self.page = self.page.resolve(context)
-        context['xpaginate'] = XPaginate(self.page)
-
-        return ''
+        return render_to_string('templates/xpaginate.html', { 'xpaginate': XPaginate(self.page) })
