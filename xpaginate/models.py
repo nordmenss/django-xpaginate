@@ -116,4 +116,4 @@ class RenderXPage(Node):
 
     def render(self, context):
         self.page = self.page.resolve(context)
-        return render_to_string('templates/xpaginate/xpaginate.html', { 'xpaginate': XPaginate(self.page) })
+        return render_to_string('xpaginate/xpaginate.html', { 'xpaginate': XPaginate(self.page) })
