@@ -1,1 +1,1 @@
-recursive-include xpaginate/templates *
+recursive-include xpaginate/templates *.html
