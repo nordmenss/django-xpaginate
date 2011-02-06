@@ -1,2 +1,2 @@
-include *.html *.py
-recursive-include xpaginate *.html *.py
+include *.html
+recursive-include xpaginate/templates *.html
