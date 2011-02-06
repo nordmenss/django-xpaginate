@@ -4,7 +4,7 @@ from django import template
 import traceback
 
 class Xoptions():
-    def __init__(self,uri=None,total_items=None,current=None,per_page=None,show=None,jump,range=None):
+    def __init__(self,uri=None,total_items=None,current=None,per_page=None,show=None,jump=None,range=None):
         self._uri=uri
         self._total_items=total_items
         self._current=current
