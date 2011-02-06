@@ -42,7 +42,7 @@ setup(name=path,
       url='https://github.com/nordmenss/django-xpaginate',
       packages = packages,
       data_files = data_files,
-      package_data={path: ['xpaginate/templates/xpaginate/*']},
+      package_data={'': ['*.html']},
 
       classifiers=(
           'Development Status :: 2 - Pre-Alpha',
