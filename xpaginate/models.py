@@ -4,25 +4,25 @@ from django import template
 import traceback
 
 class Xoptions():
-    def __init__(self):
-        self.uri=None
-        self.total_items=None
-        self.current=None
-        self.per_page=None
-        self.show=None
-        self.jump=True
-        self.range=None
+    def __init__(self,uri=None,total_items=None,current=None,per_page=None,show=None,jump,range=None):
+        self._uri=uri
+        self._total_items=total_items
+        self._current=current
+        self._per_page=per_page
+        self._show=show
+        self._jump=jump
+        self._range=range
 
 class XPaginate:
     def __init__(self, page):
-        self.total_items = int(page.total_items)
-        self.current = int(page.current)
-        self.per_page = int(page.per_page)
-        self.show = int(page.show)
-        self.jump = page.jump
-        self.range = int(page.range)
+        self.total_items = int(page._total_items)
+        self.current = int(page._current)
+        self.per_page = int(page._per_page)
+        self.show = int(page._show)
+        self.jump = page._jump
+        self.range = int(page._range)
         self.jump_calc = 2
-        self.uri = page.uri
+        self.uri = page._uri
 
         if self.current is 0:
             self.current = 1
