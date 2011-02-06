@@ -29,7 +29,10 @@ class XPaginate:
             self.current = 1
 
         # Total number of pages
-        self.total_pages = int(ceil(float(self.total_items) / float(self.per_page)))
+        if self.total_items>0:
+            self.total_pages = int(ceil(float(self.total_items) / float(self.per_page)))
+        else:
+            self.total_pages=0
 
         if self.current is not 1:
             self.has_previous = True
