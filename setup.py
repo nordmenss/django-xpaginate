@@ -10,7 +10,7 @@ setup(name=path,
       author='NORD',
       author_email='nordmenss@gmail.com',
       url='https://github.com/nordmenss/django-xpaginate',
-      packages=[ path,],
+      packages=[ path,path+'.templatetags',path+'.templates',],
 
       classifiers=(
           'Development Status :: 2 - Pre-Alpha',
