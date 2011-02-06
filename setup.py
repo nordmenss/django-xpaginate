@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from distutils.core import setup
 from html_blocks import VERSION
+import os
+import sys
 path='xpaginate'
 
 packages, data_files = [], []
